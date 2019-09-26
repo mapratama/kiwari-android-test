@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:layout_alignParentRight="true"
+            android:id="@+id/sendButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="SEND"/>
+
+        <EditText
+            android:layout_margin="5dp"
+            android:layout_toLeftOf="@+id/sendButton"
+            android:padding="10dp"
+            android:id="@+id/chatEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type here"
+            android:textSize="15sp"
+            android:background="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_above="@+id/layout_input"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/backButton"
+                app:srcCompat="@drawable/ic_chevron_left_black"
+                android:scaleType="centerCrop"
+                android:layout_width="20dp"
+                android:layout_height="40dp" />
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:id="@+id/userPhoto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_marginLeft="10dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:ellipsize="end"
+                android:text="Muhamad Angga Pratama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>
